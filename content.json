@@ -1,0 +1,51 @@
+{
+  "hero": {
+    "title": "Vigrestad Maskin",
+    "tagline": "Fabrikkutsalg av gravemaskiner og grunnarbeidsutstyr"
+  },
+  "about": {
+    "heading": "Om Vigrestad Maskin",
+    "paragraphs": [
+      "Vigrestad Maskin er et fabrikkutsalg av gravemaskiner og kompaktlastere, lokalisert på Ånestadvegen 23 i Varhaug. Vi tilbyr et bredt utvalg av kvalitetsmaskiner for graving, grunnarbeid og anleggsprosjekter.",
+      "Med leveringsklare maskiner på lager og konkurransedyktige priser, er vi en pålitelig partner for anleggsfirmaer, entreprenører og gårdbrukere. Vi kan tilby rimelig og rask levering i hele Norge.",
+      "Hos oss finner du maskiner som er klare til å jobbe - fra kompakte gravemaskiner til kraftige kompaktlastere. Ta kontakt for å høre mer om tilgjengelige maskiner og leveringsmuligheter."
+    ]
+  },
+  "products": {
+    "heading": "Produkter og utstyr",
+    "intro": "Vi leverer et bredt spekter av maskiner og utstyr for graving og grunnarbeid:",
+    "items": [
+      {
+        "title": "Gravemaskiner",
+        "description": "Ulike størrelser og modeller, fra kompakte maskiner for trange områder til større enheter for omfattende anleggsarbeid. Alle maskiner er leveringsklare og klargjort for arbeid."
+      },
+      {
+        "title": "Kompaktlastere",
+        "description": "Allsidige maskiner for lasting, graving og terrengarbeid. Perfekt for gårdsdrift, anleggsarbeid og vedlikehold."
+      },
+      {
+        "title": "Tilbehør og utstyr",
+        "description": "Komplett sortiment av utstyr og tilbehør til gravemaskiner og kompaktlastere."
+      }
+    ]
+  },
+  "inventory": {
+    "heading": "Leveringsklare maskiner",
+    "paragraphs": [
+      "Vi har flere maskiner på lager som er klare for rask utlevering. Alle maskiner blir grundig sjekket og klargjort før levering.",
+      "Med jevnlige leveranser av nye maskiner holder vi et variert utvalg tilpasset ulike behov og prosjekter. Ring oss for oppdatert oversikt over tilgjengelige maskiner."
+    ]
+  },
+  "contact": {
+    "heading": "Kontakt oss",
+    "intro": "Ta kontakt for spørsmål om tilgjengelige maskiner, priser og leveringsmuligheter. Vi leverer over hele Norge.",
+    "details": {
+      "company": "Vigrestad Maskin",
+      "address": "Ånestadvegen 23",
+      "postal": "4365 Varhaug",
+      "phone": "988 77 800",
+      "email": "ege68@msn.com"
+    },
+    "cta": "Ring eller send e-post i dag for å høre mer om våre leveringsklare maskiner."
+  }
+}

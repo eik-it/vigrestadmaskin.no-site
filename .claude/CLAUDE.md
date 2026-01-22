@@ -41,6 +41,12 @@ This project uses a specialized agent crew coordinated by **Bas**, the foreman. 
 - **When**: Meta tags, structured data, keyword optimization
 - **Specialization**: Norwegian search for machinery sales
 
+### Strek (Visual Designer)
+- **Role**: Layout, typography, spacing, color palettes, visual hierarchy
+- **When**: Design reviews, layout decisions, aesthetic consistency
+- **Specialization**: Jutul.no minimalist Scandinavian aesthetic
+- **Note**: Reviews designs, Grabb implements recommendations
+
 ### Bolt (Quality Gate)
 - **Role**: Build validation and pre-commit quality checks
 - **When**: Before commits, validating changes, checking builds

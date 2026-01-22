@@ -5,8 +5,8 @@
       "url": "https://mcp.docs.astro.build/mcp"
     },
     "playwright": {
-      "command": "npx",
-      "args": ["@playwright/mcp@latest"]
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "mcr.microsoft.com/playwright/mcp"]
     }
   }
 }

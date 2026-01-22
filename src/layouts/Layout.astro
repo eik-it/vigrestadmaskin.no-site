@@ -4,7 +4,8 @@ interface Props {
   description?: string;
 }
 
-const { title, description = "Vigrestad Maskin - Graving og grunnarbeid i Jæren" } = Astro.props;
+const { title, description = "Fabrikkutsalg av gravemaskiner og grunnarbeidsutstyr i Varhaug. Leveringsklare maskiner med rimelig og rask levering i hele Norge." } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -14,13 +15,72 @@ const { title, description = "Vigrestad Maskin - Graving og grunnarbeid i Jæren
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
     <title>{title}</title>
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:locale" content="nb_NO" />
+    <meta property="og:site_name" content="Vigrestad Maskin" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Local Business Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Store",
+      "name": "Vigrestad Maskin",
+      "description": "Fabrikkutsalg av gravemaskiner og grunnarbeidsutstyr",
+      "url": "https://vigrestadmaskin.no",
+      "telephone": "+4798877800",
+      "email": "ege68@msn.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Ånestadvegen 23",
+        "addressLocality": "Varhaug",
+        "postalCode": "4365",
+        "addressCountry": "NO"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Norge"
+      },
+      "priceRange": "$$",
+      "paymentAccepted": "Cash, Credit Card",
+      "openingHours": "Mo-Fr 08:00-16:00",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 58.6025,
+        "longitude": 5.6503
+      }
+    })} />
+
+    <!-- Product Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Gravemaskiner",
+      "description": "Bredt utvalg av gravemaskiner og kompaktlastere for salg",
+      "brand": {
+        "@type": "Organization",
+        "name": "Vigrestad Maskin"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "NOK",
+        "seller": {
+          "@type": "Organization",
+          "name": "Vigrestad Maskin"
+        }
+      }
+    })} />
 
     <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
