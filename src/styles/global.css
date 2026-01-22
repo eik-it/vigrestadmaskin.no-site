@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+/* Vigrestad Maskin - Minimalist Scandinavian style inspired by jutul.no */
+
+@theme {
+  /* Earth and machinery tones */
+  --color-earth-50: #faf9f7;
+  --color-earth-100: #f5f3ef;
+  --color-earth-200: #e8e4dd;
+  --color-earth-300: #d4cdc1;
+  --color-earth-400: #b8aa96;
+  --color-earth-500: #9d8b74;
+  --color-earth-600: #857562;
+  --color-earth-700: #6d5f50;
+  --color-earth-800: #5a4f44;
+  --color-earth-900: #4a423a;
+
+  /* Steel/machinery accent */
+  --color-steel-50: #f6f7f8;
+  --color-steel-100: #eceef0;
+  --color-steel-200: #d5d9de;
+  --color-steel-300: #b0b8c1;
+  --color-steel-400: #8592a0;
+  --color-steel-500: #667485;
+  --color-steel-600: #515d6c;
+  --color-steel-700: #434d59;
+  --color-steel-800: #3a424b;
+  --color-steel-900: #333941;
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-earth-50 text-earth-900 font-sans;
+}
+
+/* Image sections - full bleed like jutul.no */
+.image-section {
+  @apply w-full relative;
+}
+
+.image-section img {
+  @apply w-full h-auto object-cover;
+}
+
+/* Content overlay on images */
+.content-overlay {
+  @apply absolute inset-0 flex items-center justify-center;
+  @apply bg-black/20;
+}
+
+/* Text sections */
+.text-section {
+  @apply max-w-3xl mx-auto px-6 py-16 md:py-24;
+  @apply text-center;
+}
+
+.text-section h2 {
+  @apply text-2xl md:text-3xl font-light mb-6 text-earth-800;
+}
+
+.text-section p {
+  @apply text-lg text-earth-600 leading-relaxed;
+}
