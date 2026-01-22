@@ -129,8 +129,7 @@ body {
   z-index: 40;
   @apply w-64 h-64 md:w-80 md:h-80;
   @apply rounded-full;
-  @apply bg-black;
-  @apply shadow-2xl;
+  background: radial-gradient(circle, black 40%, transparent 70%);
   @apply flex items-center justify-center;
   @apply p-8 md:p-10;
   @apply overflow-hidden;
