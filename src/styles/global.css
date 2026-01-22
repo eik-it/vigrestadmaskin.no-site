@@ -27,6 +27,30 @@
   --color-steel-800: #3a424b;
   --color-steel-900: #333941;
 
+  /* Deep machinery blue - primary brand color */
+  --color-machinery-50: #f0f5fa;
+  --color-machinery-100: #e0ebf5;
+  --color-machinery-200: #c2d7eb;
+  --color-machinery-300: #94b8dc;
+  --color-machinery-400: #5f94ca;
+  --color-machinery-500: #3e76b5;
+  --color-machinery-600: #2d5c98;
+  --color-machinery-700: #264a7c;
+  --color-machinery-800: #1e3a61;
+  --color-machinery-900: #172d4a;
+
+  /* Golden yellow - equipment accent from logo */
+  --color-golden-50: #fffcf5;
+  --color-golden-100: #fff7e6;
+  --color-golden-200: #ffedc2;
+  --color-golden-300: #ffde94;
+  --color-golden-400: #ffc95f;
+  --color-golden-500: #fdb515;
+  --color-golden-600: #e09600;
+  --color-golden-700: #b87800;
+  --color-golden-800: #905f00;
+  --color-golden-900: #6b4700;
+
   /* Typography */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
@@ -40,13 +64,90 @@ body {
   @apply bg-earth-50 text-earth-900 font-sans;
 }
 
-/* Image sections - full bleed like jutul.no */
+/* Content container for large screens */
+.content-container {
+  @apply max-w-7xl mx-auto;
+}
+
+/* Image sections - with margins and breathing room like jutul.no */
 .image-section {
-  @apply w-full relative;
+  @apply relative;
+  @apply mx-4 md:mx-16 lg:mx-24;
+  @apply mb-16 md:mb-24 lg:mb-32;
+  @apply max-w-7xl mx-auto;
+}
+
+/* Hero section - full width with bottom fade (override max-width) */
+.image-section.hero {
+  @apply mt-0 mb-0 mx-0;
+  max-width: none;
+}
+
+.image-section.hero>div {
+  @apply rounded-none;
+}
+
+.image-section.hero img {
+  @apply rounded-none;
+}
+
+/* Hero gradient fade to background color at bottom */
+.image-section.hero>div::after {
+  content: '';
+  @apply absolute inset-0 pointer-events-none rounded-none;
+  background: linear-gradient(to bottom,
+      transparent 0%,
+      transparent 50%,
+      rgba(250, 249, 247, 0.2) 70%,
+      rgba(250, 249, 247, 0.6) 85%,
+      rgba(250, 249, 247, 1) 100%);
+  z-index: 10;
+}
+
+/* Space after hero for overlapping logo */
+.image-section.hero+.image-section {
+  @apply mt-20 md:mt-24;
+}
+
+/* Staggered left/right positioning for non-hero sections */
+.image-section:not(.hero):nth-child(odd) {
+  @apply lg:-translate-x-8 xl:-translate-x-16;
+}
+
+.image-section:not(.hero):nth-child(even) {
+  @apply lg:translate-x-8 xl:translate-x-16;
 }
 
 .image-section img {
-  @apply w-full h-auto object-cover;
+  @apply w-full h-full object-cover;
+  @apply rounded-sm;
+}
+
+/* Logo - circular black container centered in hero */
+.logo-container {
+  @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
+  z-index: 40;
+  @apply w-64 h-64 md:w-80 md:h-80;
+  @apply rounded-full;
+  @apply bg-black;
+  @apply shadow-2xl;
+  @apply flex items-center justify-center;
+  @apply p-8 md:p-10;
+  @apply overflow-hidden;
+}
+
+.logo-container .logo {
+  @apply w-full h-full;
+  object-fit: none;
+}
+
+/* Subtle vignette effect on images for depth */
+.image-section>div::after {
+  content: '';
+  @apply absolute inset-0 pointer-events-none;
+  @apply bg-gradient-to-b from-black/10 via-transparent to-black/20;
+  @apply rounded-sm;
+  z-index: 10;
 }
 
 /* Content overlay on images */
@@ -55,9 +156,9 @@ body {
   @apply bg-black/20;
 }
 
-/* Text sections */
+/* Text sections - massive vertical spacing */
 .text-section {
-  @apply max-w-3xl mx-auto px-6 py-16 md:py-24;
+  @apply max-w-3xl mx-auto px-6 py-32 md:py-48;
   @apply text-center;
 }
 
@@ -66,5 +167,136 @@ body {
 }
 
 .text-section p {
-  @apply text-lg text-earth-600 leading-relaxed;
+  @apply text-lg text-earth-800 leading-relaxed;
+}
+
+/* Machinery blue panels for text on color - deep professional blue */
+.machinery-panel {
+  @apply bg-machinery-800 text-white px-8 py-32 md:py-48;
+}
+
+.machinery-panel h2 {
+  @apply text-white;
+}
+
+.machinery-panel p {
+  @apply text-white;
+}
+
+/* Golden accent panel - for emphasis and variety */
+.golden-panel {
+  @apply bg-golden-600 text-machinery-900 px-8 py-32 md:py-48;
+}
+
+.golden-panel h2 {
+  @apply text-machinery-900;
+}
+
+.golden-panel p {
+  @apply text-machinery-800;
+}
+
+/* Floating text boxes that overlap images - jutul.no style */
+.floating-text-box {
+  @apply absolute;
+  z-index: 30;
+  @apply bg-machinery-800 text-white;
+  @apply px-6 py-8 md:px-8 md:py-10;
+  @apply shadow-2xl;
+  @apply max-w-xs md:max-w-md;
+  @apply rounded-sm;
+}
+
+/* Horizontal positioning - offset outside image bounds for staggered effect */
+.floating-text-box.left {
+  @apply left-4 md:-left-8 lg:-left-16;
+}
+
+.floating-text-box.right {
+  @apply right-4 md:-right-8 lg:-right-16;
+}
+
+.floating-text-box.centered {
+  @apply left-1/2 -translate-x-1/2;
+}
+
+/* Vertical positioning - offset for staggered overlap */
+.floating-text-box.top {
+  @apply top-8 md:-top-8 lg:-top-12;
+}
+
+.floating-text-box.middle {
+  @apply top-1/2 -translate-y-1/2;
+}
+
+.floating-text-box.bottom {
+  @apply bottom-8 md:-bottom-8 lg:-bottom-12;
+}
+
+/* Auto-position text opposite to staggered images */
+@media (min-width: 1024px) {
+  .image-section:not(.hero):nth-child(odd) .floating-text-box {
+    left: auto;
+    @apply right-4 md:-right-8 lg:-right-16;
+  }
+
+  .image-section:not(.hero):nth-child(even) .floating-text-box {
+    right: auto;
+    @apply left-4 md:-left-8 lg:-left-16;
+  }
+}
+
+/* Typography inside floating boxes */
+.floating-text-box h2 {
+  @apply text-white font-bold text-xl md:text-2xl;
+}
+
+.floating-text-box p {
+  @apply text-white/90;
+}
+
+/* Mobile: Stack boxes at bottom for readability */
+@media (max-width: 768px) {
+  .floating-text-box {
+    @apply max-w-[90%];
+  }
+
+  .floating-text-box.middle {
+    @apply top-auto bottom-4 translate-y-0;
+  }
+}
+
+/* Fade-in animation on scroll */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.image-section {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Stagger the animations for each section */
+.image-section:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.image-section:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.image-section:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.image-section:nth-child(4) {
+  animation-delay: 0.4s;
 }
