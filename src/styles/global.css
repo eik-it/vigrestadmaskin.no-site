@@ -123,21 +123,18 @@ body {
   @apply rounded-sm;
 }
 
-/* Logo - circular black container centered in hero */
+/* Logo container centered in hero */
 .logo-container {
   @apply absolute left-1/2 top-[70%] -translate-x-1/2 -translate-y-1/2;
   z-index: 40;
   @apply w-64 h-64 md:w-80 md:h-80;
-  @apply rounded-full;
-  background: radial-gradient(circle, black 40%, transparent 70%);
   @apply flex items-center justify-center;
-  @apply p-8 md:p-10;
-  @apply overflow-hidden;
 }
 
 .logo-container .logo {
   @apply w-full h-full;
   @apply object-contain;
+  @apply drop-shadow-2xl;
 }
 
 /* Subtle vignette effect on images for depth */
