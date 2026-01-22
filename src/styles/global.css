@@ -156,9 +156,9 @@ body {
   @apply bg-black/20;
 }
 
-/* Text sections - massive vertical spacing */
+/* Text sections - vertical spacing */
 .text-section {
-  @apply max-w-3xl mx-auto px-6 py-32 md:py-48;
+  @apply max-w-3xl mx-auto px-6 pt-16 pb-32 md:pt-20 md:pb-48;
   @apply text-center;
 }
 
