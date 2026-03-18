@@ -243,8 +243,8 @@ body {
 }
 
 /* Typography inside floating boxes */
-.floating-text-box h2 {
-  @apply text-white font-bold text-xl md:text-2xl;
+.floating-text-box h3 {
+  @apply text-white font-light text-xl md:text-2xl;
 }
 
 .floating-text-box p {
