@@ -159,7 +159,7 @@ body {
 }
 
 .text-section h2 {
-  @apply text-2xl md:text-3xl font-light mb-6 text-earth-800;
+  @apply text-3xl md:text-4xl font-light mb-6 text-earth-800 tracking-wide;
 }
 
 .text-section p {
@@ -244,11 +244,11 @@ body {
 
 /* Typography inside floating boxes */
 .floating-text-box h3 {
-  @apply text-white font-light text-xl md:text-2xl;
+  @apply text-white font-light text-xl md:text-2xl tracking-wide;
 }
 
 .floating-text-box p {
-  @apply text-white/90;
+  @apply text-white/90 leading-relaxed;
 }
 
 /* Mobile: Stack boxes at bottom for readability */
