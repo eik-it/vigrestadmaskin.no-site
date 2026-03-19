@@ -196,10 +196,10 @@ body {
 .floating-text-box {
   @apply absolute;
   z-index: 30;
-  @apply bg-machinery-800 text-white;
+  @apply bg-machinery-800/90 backdrop-blur-sm text-white;
   @apply px-6 py-8 md:px-8 md:py-10;
   @apply shadow-2xl;
-  @apply max-w-xs md:max-w-md;
+  @apply max-w-xs sm:max-w-sm md:max-w-md;
   @apply rounded-sm;
 }
 
@@ -258,7 +258,7 @@ body {
   }
 
   .floating-text-box.middle {
-    @apply top-auto bottom-4 translate-y-0;
+    @apply top-auto bottom-6 translate-y-0;
   }
 }
 
