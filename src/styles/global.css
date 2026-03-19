@@ -163,7 +163,7 @@ body {
 }
 
 .text-section p {
-  @apply text-lg text-earth-800 leading-relaxed;
+  @apply text-lg text-earth-700 leading-relaxed;
 }
 
 /* Machinery blue panels for text on color - deep professional blue */
