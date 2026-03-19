@@ -100,6 +100,7 @@ html {
 body {
   @apply bg-earth-50 text-earth-900 font-sans;
   font-kerning: normal;
+  font-optical-sizing: auto;
 }
 
 /* Content container for large screens */
