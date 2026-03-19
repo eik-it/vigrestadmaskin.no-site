@@ -413,3 +413,28 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Footer contact block — tokenised typography */
+.footer-contact h2 {
+  font-size: var(--text-display);
+  font-family: var(--font-display);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+  @apply font-light text-earth-800 mb-4;
+}
+
+.footer-contact p {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  @apply text-earth-700;
+}
+
+.footer-contact .contact-details {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+}
+
+.footer-contact .copyright {
+  font-size: var(--text-secondary);
+  @apply text-earth-500 pt-8;
+}
