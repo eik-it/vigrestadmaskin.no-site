@@ -25,8 +25,20 @@ const base = import.meta.env.BASE_URL;
             class="logo"
           />
         </div>
+
       </div>
     </section>
+
+    <!-- Sticky mobile phone bar - tap to call, hidden on desktop -->
+    <div class="mobile-call-bar md:hidden" aria-label="Ring oss">
+      <span class="mobile-call-bar__label">Leverandør til hele Norge</span>
+      <a href="tel:+4798877800" class="mobile-call-bar__link">
+        <svg class="mobile-call-bar__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 6.75z" />
+        </svg>
+        988 77 800
+      </a>
+    </div>
 
     <!-- Introduction Text Section -->
     <section class="text-section">
@@ -35,11 +47,13 @@ const base = import.meta.env.BASE_URL;
         Vigrestad Maskin tilbyr et bredt utvalg av gravemaskiner og utstyr.
         Vi har flere leveringsklare maskiner og kan tilby rimelig og rask levering i hele Norge.
       </p>
+      <a href="tel:+4798877800" class="hero-cta__phone">Ring oss på 988 77 800</a>
+      <p class="hero-cta__tagline">Maskiner på lager — klare for levering</p>
     </section>
 
     <!-- Equipment Image Section with Floating Text -->
     <section class="image-section">
-      <div class="relative h-[70vh] md:h-[85vh]">
+      <div class="relative h-auto md:h-[85vh]">
         <div class="absolute inset-0 overflow-hidden rounded-sm">
           <img
             src={`${base}/images/product-r15-closeup.jpg`}
@@ -60,7 +74,7 @@ const base = import.meta.env.BASE_URL;
 
     <!-- Delivery Image Section with Floating Text -->
     <section class="image-section">
-      <div class="relative h-[70vh] md:h-[85vh]">
+      <div class="relative h-auto md:h-[85vh]">
         <div class="absolute inset-0 overflow-hidden rounded-sm">
           <img
             src={`${base}/images/inventory-tractors.jpg`}
@@ -81,7 +95,7 @@ const base = import.meta.env.BASE_URL;
 
     <!-- Final Image Section with Floating Text -->
     <section class="image-section">
-      <div class="relative h-[70vh] md:h-[85vh]">
+      <div class="relative h-auto md:h-[85vh]">
         <div class="absolute inset-0 overflow-hidden rounded-sm">
           <img
             src={`${base}/images/detail-comfort-seat.jpg`}

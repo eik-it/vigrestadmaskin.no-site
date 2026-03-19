@@ -154,3 +154,21 @@ const canonicalURL = new URL(pathWithoutBase, Astro.site);
 <style is:global>
   @import "../styles/global.css";
 </style>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  document.querySelectorAll('.image-section:not(.hero), .text-section').forEach((el) => {
+    observer.observe(el);
+  });
+</script>
