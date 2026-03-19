@@ -5,8 +5,12 @@ interface Props {
 }
 
 const { title, description = "Fabrikkutsalg av gravemaskiner og grunnarbeidsutstyr i Varhaug. Leveringsklare maskiner med rimelig og rask levering i hele Norge." } = Astro.props;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const base = import.meta.env.BASE_URL;
+// Strip base path from pathname to get canonical path relative to site root
+const pathWithoutBase = Astro.url.pathname.startsWith(base)
+  ? Astro.url.pathname.slice(base.length) || '/'
+  : Astro.url.pathname;
+const canonicalURL = new URL(pathWithoutBase, Astro.site);
 ---
 
 <!doctype html>
@@ -27,10 +31,22 @@ const base = import.meta.env.BASE_URL;
     <meta property="og:locale" content="nb_NO" />
     <meta property="og:site_name" content="Vigrestad Maskin" />
 
+    <!-- Open Graph Image -->
+    <meta property="og:image" content="https://vigrestadmaskin.no/images/hero-r10-landscape.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Gravemaskiner og anleggsutstyr - Vigrestad Maskin fabrikkutsalg" />
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://vigrestadmaskin.no/images/hero-r10-landscape.jpg" />
+    <meta name="twitter:image:alt" content="Gravemaskiner og anleggsutstyr - Vigrestad Maskin fabrikkutsalg" />
+
+    <!-- SEO Controls -->
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#78716c" />
 
     <!-- Local Business Schema -->
     <script type="application/ld+json" set:html={JSON.stringify({
