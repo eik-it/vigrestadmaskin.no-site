@@ -7,7 +7,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://eik-it.github.io',
+  site: 'https://vigrestadmaskin.no',
   base: '/vigrestadmaskin.no-site',
 
   vite: {
