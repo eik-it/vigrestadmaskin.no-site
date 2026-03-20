@@ -169,7 +169,7 @@ const canonicalURL = new URL(pathWithoutBase, Astro.site);
     { threshold: 0.15 }
   );
 
-  document.querySelectorAll('.image-section:not(.hero), .text-section').forEach((el) => {
+  document.querySelectorAll('.image-section:not(.hero), .text-section, .video-section').forEach((el) => {
     observer.observe(el);
   });
 </script>
