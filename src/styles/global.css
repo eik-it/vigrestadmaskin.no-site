@@ -382,16 +382,51 @@ body {
   @apply w-4 h-4 flex-shrink-0;
 }
 
+/* Video section — layout and spacing (consistent with .text-section pattern) */
+.video-section {
+  @apply max-w-3xl mx-auto px-6 pt-16 pb-32 md:pt-20 md:pb-48;
+  @apply text-center;
+}
+
+.video-section__embed-wrapper {
+  @apply mt-10 md:mt-14;
+}
+
+/* Typography — using existing tokens exclusively */
+.video-section__heading {
+  font-size: var(--text-display);
+  font-family: var(--font-display);
+  font-weight: 300;
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+  @apply text-earth-800 mb-6;
+}
+
+.video-section__body {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  @apply text-earth-700 max-w-2xl mx-auto;
+}
+
+.video-section__channel-link {
+  font-family: var(--font-sans);
+  font-size: var(--text-secondary);
+  letter-spacing: 0.04em;
+  @apply text-earth-600 hover:text-machinery-700 transition-colors duration-200 no-underline;
+}
+
 /* Scroll-triggered fade-in animations */
 .image-section,
-.text-section {
+.text-section,
+.video-section {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .image-section.visible,
-.text-section.visible {
+.text-section.visible,
+.video-section.visible {
   opacity: 1;
   transform: translateY(0);
 }
