@@ -120,7 +120,7 @@ const canonicalURL = new URL(pathWithoutBase, Astro.site);
       "@context": "https://schema.org",
       "@type": "Product",
       "name": "Gravemaskiner og anleggsmaskiner",
-      "description": "Bredt utvalg av gravemaskiner, minigraver og kompaktlastere for salg. Leveringsklare maskiner med rask levering i hele Norge.",
+      "description": "Kompakte gravemaskiner, minigraver og kompaktlastere for salg. Fabrikkutsalgspriser med leveringsklare maskiner og rask levering i hele Norge.",
       "category": "Bygge- og anleggsmaskiner",
       "image": "https://vigrestadmaskin.no/images/product-r15-closeup.jpg",
       "brand": {
@@ -128,11 +128,41 @@ const canonicalURL = new URL(pathWithoutBase, Astro.site);
         "name": "Vigrestad Maskin",
         "url": "https://vigrestadmaskin.no"
       },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Maskintype",
+          "value": "Kompaktgraver, minigraver, kompaktlaster"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Driftsvekt fra",
+          "value": "1200",
+          "unitCode": "KGM"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Gravdybde maks",
+          "value": "2100",
+          "unitCode": "MMT"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Motor",
+          "value": "Diesel"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Hydraulisk tilkobling",
+          "value": "Hurtigkoblinger for tilleggsutstyr"
+        }
+      ],
       "offers": {
         "@type": "AggregateOffer",
         "availability": "https://schema.org/InStock",
         "priceCurrency": "NOK",
         "offerCount": "10",
+        "url": "https://vigrestadmaskin.no",
         "seller": {
           "@type": "Organization",
           "name": "Vigrestad Maskin",
@@ -169,7 +199,7 @@ const canonicalURL = new URL(pathWithoutBase, Astro.site);
     { threshold: 0.15 }
   );
 
-  document.querySelectorAll('.image-section:not(.hero), .text-section, .video-section').forEach((el) => {
+  document.querySelectorAll('.image-section:not(.hero), .text-section, .video-section, .product-specs-section').forEach((el) => {
     observer.observe(el);
   });
 </script>
