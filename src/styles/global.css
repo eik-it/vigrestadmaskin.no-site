@@ -476,6 +476,24 @@ body {
   @apply text-earth-500 pt-8;
 }
 
+/* Directions link in footer */
+.footer-directions-link {
+  font-size: var(--text-secondary);
+  line-height: var(--leading-body);
+  @apply text-earth-700 pt-2 pb-1;
+}
+
+.footer-directions-link__anchor {
+  font-family: var(--font-sans);
+  font-size: var(--text-secondary);
+  letter-spacing: 0.04em;
+  @apply text-earth-700 no-underline transition-colors duration-200 py-3 inline-block;
+}
+
+.footer-directions-link__anchor:hover {
+  @apply text-machinery-700;
+}
+
 /* ===== Product Specs Section ===== */
 
 .product-specs-section {
